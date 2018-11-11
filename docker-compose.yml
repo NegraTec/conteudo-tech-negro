@@ -3,6 +3,9 @@ version: '3'
 services:
   db:
     image: postgres
+    container_name: conteudo-tech-negro-postgres
+    environment:
+      POSTGRES_DB: conteudonegro
   web:
     build: .
     command: flask run --host=0.0.0.0
