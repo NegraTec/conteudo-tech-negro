@@ -13,7 +13,7 @@
 			<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 			<link rel="stylesheet" href="{{ url_for('static', filename='css/style-desktop.css') }}" />
 		</noscript>
-    <title>Contéudo Negro Tech</title>
+    <title>Contéudo Tech Negro</title>
 </head>
 <body>
     <body class="homepage">
@@ -24,7 +24,7 @@
 
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="#">Contéudo Negro Tech</a></h1>
+					<h1><a href="#">Contéudo Tech Negro</a></h1>
 				</div>
 
 				<!-- Nav -->
@@ -68,39 +68,19 @@
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Praesent eleifend</h2>
+								<h2>Mais textos</h2>
 							</header>
 							<ul class="style1">
-								<li class="first"><img src="images/pics06.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
+								{% for item in conteudos[4:8]%}
+								<li class="first"><img src="{{ item.imagem }}" width="80" height="80" alt="">
+									<p>{{ item.titulo }} </p>
+									<p>por {{ item.nome }} </p>
 								</li>
-								<li><img src="images/pics07.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-								<li><img src="images/pics08.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
+								{% endfor %}
 							</ul>
 						</section>
 					</div>
-					<div class="3u">
-						<section>
-							<header>
-								<h2>Maecenas lectus</h2>
-							</header>
-							<ul class="style1">
-								<li class="first"><img src="images/pics09.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-								<li><img src="images/pics10.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-								<li><img src="images/pics11.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-							</ul>
-						</section>
-					</div>
+
 					<div class="6u">
 						<section>
 							<header>
@@ -120,27 +100,31 @@
 					<div class="8u">
 						<section>
 							<header>
-								<h2>Maecenas luctus lectus at sapien</h2>
+								<h2>Para que serve esse site?</h2>
 							</header>
-							<p>This is <strong>Autonomy</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
-							<p>Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend.</p>
-							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor.</p>
+							<p>O Conteúdo Tech Negro veio de uma provocação da colega Mariana Queiroz que procurava por conteúdo técnico na área de desenvolvimento, e não encontrava pessoas negras como autoras desses conteúdos.</p>
+
+							<p>A idéia é de maneira colaborativa o site ser alimentado. Você é uma pessoa negra, da área de Tecnologia, tem um texto/vídeo/apresentação, ou conhece um texto/vídeo/apresentação de uma pessoa negra? Manda email para roselma.mendes@gmail.com. Preciso de: </p>
+							<ul style="list-style-type: disc">
+								<li>Nome da pessoa</li>
+								<li>Titulo do conteúdo</li>
+								<li>Url do conteúdo</li>
+								<li>Imagem para o conteúdo (se possível)</li>
+								<li>Resumo sobre o conteúdo (se possível)</li>
+								<li>Tema (Monitoramento, DevOps, etc)</li>
+								<li>Redes Sociais da pessoa (uma ou mais, se possível)</li>
+							</ul>
+						</br>
+							<p>Tem idéias, melhorias para o site? Coloque aqui: https://github.com/NegraTec/conteudo-tech-negro/issues</p>
 						</section>
 					</div>
 					<div class="4u">
 						<section>
 							<header>
-								<h2>Lectus at sapien</h2>
+								<h2>Redes Sociais</h2>
 							</header>
 							<ul class="style">
 								<li><a href="#">Pellentesque quis elit non gravida blandit.</a></li>
-								<li><a href="#">Lorem ipsum dolor sit amet, adipiscing elit.</a></li>
-								<li><a href="#">Phasellus nec erat sit pellentesque congue.</a></li>
-								<li><a href="#">Cras vitae metus pellentesque pharetra.</a></li>
-								<li><a href="#">Maecenas vitae orci vitae  feugiat eleifend.</a></li>
-								<li><a href="#">Pellentesque quis elit non gravida blandit.</a></li>
-								<li><a href="#">Lorem ipsum dolor sit amet, adipiscing elit.</a></li>
-								<li><a href="#">Maecenas vitae orci  tellus feugiat eleifend.</a></li>
 							</ul>
 						</section>
 					</div>
