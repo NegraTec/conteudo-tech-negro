@@ -10,6 +10,26 @@
 
 2. Dentro da pasta do projeto execute `docker build -t conteudo-tech-negro .`
 
-3. Para iniciar o servidor execute `docker-compose up`
+3. Adicione um arquivo chamado .env com as variaveis sugeridas no `.env-sample`.
 
-4. Acesse `http://localhost:5000`
+4. Para iniciar o servidor execute `docker-compose up`
+
+5. Acesse `http://localhost:5000`
+
+## Migração do banco de dados
+
+Após mudanças nas tabelas, executar os comandos `docker-compose exec web flask db migrate` e depois `docker-compose exec web flask db upgrade`
+
+Para mais informações, acesse a documentação do [Flask Migrate](https://flask-migrate.readthedocs.io/en/latest/)
+
+Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
+
+## Deploy
+
+Usamos Heroku.
+https://conteudo-tech-negro.herokuapp.com
+
+**Variáveis de ambiente**
+
+`URL_BANCO_DADOS`
+

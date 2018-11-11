@@ -1,10 +1,14 @@
 from flask import Flask, render_template
 import random
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+import os
+
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:postgres@db:5432/conteudonegro'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('URL_BANCO_DADOS')
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 
 class Autora(db.Model):
@@ -30,11 +34,14 @@ class Conteudo(db.Model):
     data_adicao = db.Column(db.Date)
     autora_id = db.Column(db.Integer, db.ForeignKey('autora.id'))
     autora = db.relationship('Autora')
-    # tema = db.Column(db.String(250))
-    # tipo_conteudo = db.Column(db.String(250))
-    # imagem = db.Column(db.String(250))
+    tema = db.Column(db.String(250))
+    tipo_conteudo = db.Column(db.String(250))
+    imagem = db.Column(db.String(250))
 
-    def __init__(self, titulo, url, resumo, data_adicao, autora):
+    def __init__(self, titulo, url, resumo, data_adicao, autora, tema, tipo_conteudo, imagem):
+        self.tema = tema
+        self.tipo_conteudo = tipo_conteudo
+        self.imagem = imagem
         self.titulo = titulo
         self.url = url
         self.resumo = resumo
