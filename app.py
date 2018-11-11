@@ -51,6 +51,17 @@ def index():
             'resumo': '',
             'tema': 'Banco de Dados',
             'redes_sociais': 'twitter: DaniMonteiroDBA'
+        },
+        {
+            'nome': 'John Kagga',
+            'url': 'https://medium.com/the-andela-way/deploying-a-python-flask-app-to-heroku-41250bda27d0',
+            'titulo': 'Deploying a Python Flask app on Heroku',
+            'imagem': 'https://cdn-images-1.medium.com/max/1760/1*FMvHG0OBg1K-qlixcCI-NA.png',
+            'resumo': '',
+            'tema': 'Desenvolvimento Web',
+            'redes_sociais': 'medium: johnkagga',
+            'data_adicao': '11/11/2018',
+            'tipo_conteudo': 'texto'
         }
     ]
     destaque = random.choice(conteudos)
