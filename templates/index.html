@@ -80,14 +80,28 @@
 							</ul>
 						</section>
 					</div>
+					<div class="3u">
+						<section>
+
+							<ul class="style1">
+								{% for item in conteudos[8:12]%}
+								<li class="first"><img src="{{ item.imagem }}" width="80" height="80" alt="">
+									<a target="_blank" href="{{ item.url }}">{{ item.titulo }} </a>
+									<p>por {{ item.nome }} </p>
+								</li>
+								{% endfor %}
+							</ul>
+						</section>
+					</div>
 
 					<div class="6u">
 						<section>
 							<header>
-								<h2>Aenean elementum facilisis ligula</h2>
+								<a href="{{ destaque.url }}"> <h2>{{ destaque.titulo }}</h2></a>
 							</header>
-							<a href="#" class="image full"><img src="images/pics12.jpg" alt=""></a>
-							<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet. Donec mattis libero eget urna. Duis pretium velit ac mauris.</p>
+							<a href="{{ destaque.url }}" class="image full"><img src="{{ destaque.imagem }}" alt=""></a>
+							<p>{{ destaque.resumo }}</p>
+							<p>por {{ destaque.nome }}</p>
 						</section>
 					</div>
 				</div>

@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import random
 app = Flask(__name__)
 
 @app.route("/")
@@ -12,7 +13,7 @@ def index():
             'resumo': 'Muita agua já rolou no meu papel de desenvolvedora, desde 2016 (quando postei pela primeira vez esse post). Agora um texto atualizado sobre a práticas de logs. E se você não loga na sua aplicação, eu aconselho a começar a fazer.',
             'tema': 'Monitoramento',
             'redes_sociais': 'twitter: roselmamendes',
-            'data_adicao': '',
+            'data_adicao': '11/11/2018',
             'tipo_conteudo': 'texto'
         },
         {
@@ -52,4 +53,5 @@ def index():
             'redes_sociais': 'twitter: DaniMonteiroDBA'
         }
     ]
-    return render_template('index.html', conteudos=conteudos)
+    destaque = random.choice(conteudos)
+    return render_template('index.html', conteudos=conteudos, destaque=destaque)
