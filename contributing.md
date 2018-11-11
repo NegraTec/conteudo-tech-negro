@@ -24,6 +24,8 @@ Para mais informações, acesse a documentação do [Flask Migrate](https://flas
 
 Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 
+**O banco possui backup agendados para as 23 hs todos os dias.**
+
 ## Deploy
 
 Usamos Heroku.
@@ -32,4 +34,6 @@ https://conteudo-tech-negro.herokuapp.com
 **Variáveis de ambiente**
 
 `URL_BANCO_DADOS`
+
+Novas variáveis de ambiente devem ser adicionadas no arquivo `.env-sample`
 
