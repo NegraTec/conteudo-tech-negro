@@ -1,7 +1,7 @@
 from flask_admin import Admin, base
 from flask_admin import helpers, expose
 from flask_admin.contrib.sqla import ModelView
-from flask_login import LoginManager, current_user, login_user
+from flask_login import LoginManager, current_user, login_user, logout_user
 from wtforms import form, fields, validators
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import redirect, url_for, request
@@ -58,6 +58,11 @@ def configurar_admin(app, db, tabelas):
             self._template_args['form'] = form
 
             return super(MyAdminIndexView, self).index()
+
+        @expose('/logout/')
+        def logout_view(self):
+            logout_user()
+            return redirect(url_for('.index'))
 
     login_manager = LoginManager()
     login_manager.init_app(app)

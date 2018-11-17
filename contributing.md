@@ -22,6 +22,8 @@ Após mudanças nas tabelas, executar os comandos `docker-compose exec web flask
 
 Para mais informações, acesse a documentação do [Flask Migrate](https://flask-migrate.readthedocs.io/en/latest/)
 
+Alembic https://alembic.zzzcomputing.com/en/latest/tutorial.html#create-a-migration-script
+
 Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 
 **O banco possui backup agendados para as 23 hs todos os dias.**

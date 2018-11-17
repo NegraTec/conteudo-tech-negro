@@ -11,9 +11,9 @@ app.secret_key = 'any random string'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('URL_BANCO_DADOS')
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
 tabela_autora, tabela_conteudo, tabela_user = configurar_banco(db)
+migrate = Migrate(app, db)
 
 configurar_admin(app, db, {'tabela_autora': tabela_autora, 'tabela_conteudo': tabela_conteudo, 'tabela_user': tabela_user})
 

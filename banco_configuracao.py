@@ -27,7 +27,7 @@ def configurar_banco(db):
     class User(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         login = db.Column(db.String(80), unique=True)
-        password = db.Column(db.String(64))
+        password = db.Column(db.String(150))
 
         # Flask-Login integration
         # NOTE: is_authenticated, is_active, and is_anonymous
