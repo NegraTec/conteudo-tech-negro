@@ -27,7 +27,8 @@ def criar_conteudo_view(conteudos):
                 'titulo': conteudo.titulo,
                 'url': conteudo.url,
                 'resumo': conteudo.resumo,
-                'nome': autora.nome
+                'nome': autora.nome,
+                'imagem': conteudo.imagem if conteudo.imagem else ''
             }
         )
 
