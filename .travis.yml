@@ -5,18 +5,7 @@ script: pytest
 deploy:
   provider: heroku
   api_key:
-    secure: -----BEGIN PGP MESSAGE-----
-
-      hQEMAxLkIdUk0wsnAQf/XaMVR1k3dECKHqPQ0KM/Cp1D8Gx2YXK19GFZCOrSgAsy
-      Gyac2WQGyUbCj2GL7iyaI9mJMIhVd2wmD+xSQMFKV7tBfeh2H0rYFOrFmxOS7s40
-      9UQ0Zy/2iapaj86RUHBbMCC/EyH+NDCwiTVWxiYOz3vPvImnjQ3uow0yTpotZGfZ
-      9QxZNgY40KVNpgdKVp6qn3p5kbrcmAkwsQdXu21EcLbXeFvtt5zMCQKU/zHEPexK
-      2DFbxb78AA/u8LX3xfLcxpAU8saVM+EJ63rSvzV8jhph4fmJI82qPLgmcnLZwnS5
-      P23JfJ4EuTPtyOMbHASu50+DMvzBT/T/NpWzNoiOAdJgAdfiLXtgibemxGs6at/b
-      BoNDZV7oVdgKNygDA4mxO4TOeuiwRszaZ6o1OxtPrGxEYwnjSZOGdEsuRuENMkDI
-      wVIBYP0oB8lsAtjrCwtvoZbnO66bG4kgbsv38/flxtRm
-      =li3v
-      -----END PGP MESSAGE-----
+    secure: hQEMAxLkIdUk0wsnAQf/XaMVR1k3dECKHqPQ0KM/Cp1D8Gx2YXK19GFZCOrSgAsyGyac2WQGyUbCj2GL7iyaI9mJMIhVd2wmD+xSQMFKV7tBfeh2H0rYFOrFmxOS7s409UQ0Zy/2iapaj86RUHBbMCC/EyH+NDCwiTVWxiYOz3vPvImnjQ3uow0yTpotZGfZ9QxZNgY40KVNpgdKVp6qn3p5kbrcmAkwsQdXu21EcLbXeFvtt5zMCQKU/zHEPexK2DFbxb78AA/u8LX3xfLcxpAU8saVM+EJ63rSvzV8jhph4fmJI82qPLgmcnLZwnS5P23JfJ4EuTPtyOMbHASu50+DMvzBT/T/NpWzNoiOAdJgAdfiLXtgibemxGs6at/bBoNDZV7oVdgKNygDA4mxO4TOeuiwRszaZ6o1OxtPrGxEYwnjSZOGdEsuRuENMkDIwVIBYP0oB8lsAtjrCwtvoZbnO66bG4kgbsv38/flxtRm=li3v
   app: stg-conteudo-tech-negro
   run:
     - "flask run upgrade"
