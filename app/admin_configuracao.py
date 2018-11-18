@@ -14,7 +14,7 @@ from app.store.models import User, Autora, Conteudo
 # Create user loader function
 @login_manager.user_loader
 def load_user(usuaria_id):
-    return UserService.obter_usuaria(usuaria_id)
+    return UserService.obter_usuaria_por_id(usuaria_id)
 
 
 # Define login and registration forms (for flask-login)
@@ -35,7 +35,7 @@ class LoginForm(form.Form):
             raise validators.ValidationError('Invalid password')
 
     def get_user(self):
-        return db.session.query(User).filter_by(login=self.login.data).first()
+        return UserService.obter_usuaria_por_login(self.login.data)
 
 
 # Create customized model view class
