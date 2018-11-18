@@ -7,6 +7,7 @@ services:
     environment:
       POSTGRES_DB: conteudonegro
   web:
+    container_name: conteudo-tech-negro
     build: .
     command: flask run --host=0.0.0.0
     volumes:

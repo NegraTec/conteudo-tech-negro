@@ -6,3 +6,4 @@ Flask-Migrate==2.3.0
 flask-admin==1.5.2
 flask-login==0.4.1
 ipython==7.1.1
+pytest==4.0.0
