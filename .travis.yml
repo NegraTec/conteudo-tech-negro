@@ -2,3 +2,9 @@ language: python
 python:
     - "3.7-dev"
 script: pytest
+deploy:
+  provider: heroku
+  api_key: HEROKU_API_KEY
+  app: stg-conteudo-tech-negro
+  run:
+    - "flask run upgrade"
