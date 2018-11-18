@@ -8,7 +8,7 @@ from flask import redirect, url_for, request
 
 from app import login_manager, db, app
 from app.service.user_service import UserService
-from app.store.models import User, Autora, Conteudo
+from app.store.models import Autora, Conteudo
 
 
 # Create user loader function
