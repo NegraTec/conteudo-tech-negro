@@ -16,6 +16,8 @@
 
 5. Acesse `http://localhost:5000`
 
+Uma boa fonte de consulta de como o projeto é desenvolvido: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
 ## Migração do banco de dados
 
 Após mudanças nas tabelas, executar os comandos `docker-compose exec web flask db migrate` e depois `docker-compose exec web flask db upgrade`
