@@ -8,19 +8,17 @@
 
 1. Clone o projeto para sua máquina
 
-2. Dentro da pasta do projeto execute `docker build -t conteudo-tech-negro .`
+2. Adicione um arquivo chamado .env com as variaveis sugeridas no `.env-sample`.
 
-3. Adicione um arquivo chamado .env com as variaveis sugeridas no `.env-sample`.
+3. Para iniciar o servidor execute `docker-compose up --build`
 
-4. Para iniciar o servidor execute `docker-compose up --build`
-
-5. Acesse `http://localhost:5000`
+4. Acesse `http://localhost:5000`
 
 Uma boa fonte de consulta de como o projeto é desenvolvido: https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
 ## Migração do banco de dados
 
-Após mudanças nas tabelas, executar os comandos `docker-compose exec web flask db migrate` e depois `docker-compose exec web flask db upgrade`
+Após mudanças nas tabelas, executar os comandos `docker-compose exec web flask db migrate` e depois `docker-compose exec web flask db upgrade` (com o servidor executando).
 
 Para mais informações, acesse a documentação do [Flask Migrate](https://flask-migrate.readthedocs.io/en/latest/)
 
