@@ -1,5 +1,5 @@
 from unittest import TestCase, mock
-from app.models import Conteudo, Autora
+from app.store.models import Conteudo, Autora
 from app.service.conteudo_service import ConteudoService
 
 

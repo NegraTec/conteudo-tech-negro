@@ -7,13 +7,14 @@ from werkzeug.security import check_password_hash
 from flask import redirect, url_for, request
 
 from app import login_manager, db, app
-from app.models import User, Autora, Conteudo
+from app.service.user_service import UserService
+from app.store.models import User, Autora, Conteudo
 
 
 # Create user loader function
 @login_manager.user_loader
-def load_user(user_id):
-    return db.session.query(User).get(user_id)
+def load_user(usuaria_id):
+    return UserService.obter_usuaria(usuaria_id)
 
 
 # Define login and registration forms (for flask-login)

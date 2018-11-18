@@ -17,5 +17,5 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 from app import routes
-from app import models
+from app.store import models
 from app import admin_configuracao

@@ -1,4 +1,4 @@
-from app.models import Conteudo, Autora
+from app.store.models import Conteudo, Autora
 
 
 class ConteudoStore:
