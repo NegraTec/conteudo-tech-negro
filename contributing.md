@@ -43,3 +43,21 @@ https://conteudo-tech-negro.herokuapp.com
 
 Novas variáveis de ambiente devem ser adicionadas no arquivo `.env-sample`
 
+Com **GCP**, o arquivo `env.yaml` é encriptado usando [Google KMS](https://cloud.google.com/kms/).
+
+É possível usar o CLI gcloud com a [imagem Docker google/cloud-sdk](https://hub.docker.com/r/google/cloud-sdk).
+
+Peça para ser adicionada no projeto GCP e coloque suas credenciais no gcloud usando `docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud auth login`. Depois configure o projeto com `docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud config set project <GCP-project>`
+
+Peça o GCP-project a outra colaboradora do repositório.
+
+Para encriptar o arquivo: `docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud kms encrypt --location global \
+  --keyring storage --key mykey \
+  --plaintext-file env.yaml \
+  --ciphertext-file env.yaml.encrypted`
+  
+Para desencriptar o arquivo: `docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud kms decrypt --location global \
+  --keyring storage --key mykey \
+  --plaintext-file env.yaml \
+  --ciphertext-file env.yaml.encrypted`
+
