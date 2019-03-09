@@ -1,5 +1,4 @@
-runtime: custom
-env: flex
+runtime: python37
 entrypoint: gunicorn app:app && flask db migrate && flask db upgrade
 includes:
   - env.yaml
