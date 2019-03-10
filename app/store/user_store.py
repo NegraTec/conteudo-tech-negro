@@ -1,4 +1,5 @@
-from app.store.models import User
+import uuid
+from app.store.models import User, db
 
 
 class UserStore:
@@ -9,3 +10,14 @@ class UserStore:
     @staticmethod
     def obter_usuaria_por_login(usuaria_login):
         return User.query.filter_by(login=usuaria_login).first()
+
+    @staticmethod
+    def criar(login, senha):
+        usuaria = User()
+
+        usuaria.id = uuid.uuid4()
+        usuaria.login = login
+        usuaria.password = senha
+
+        db.session.add(usuaria)
+        db.session.commit()

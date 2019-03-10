@@ -11,6 +11,9 @@ from app.service.user_service import UserService
 from app.store.models import Autora, Conteudo
 
 
+def criar_usuaria_admin():
+    UserService.criar_usuaria_admin()
+
 # Create user loader function
 @login_manager.user_loader
 def load_user(usuaria_id):

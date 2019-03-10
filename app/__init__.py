@@ -23,3 +23,5 @@ from app import admin_configuracao
 # flask migrate command to be used on GAE
 with app.app_context():
     upgrade()
+
+admin_configuracao.criar_usuaria_admin()

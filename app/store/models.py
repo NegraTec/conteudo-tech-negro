@@ -1,9 +1,9 @@
 from app import db
-
+from sqlalchemy.dialects.postgresql import UUID
 
 class Autora(db.Model):
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(UUID(as_uuid=True), primary_key=True)
     nome = db.Column(db.String(250), nullable=False)
     redes_sociais = db.Column(db.String(250))
 
@@ -13,12 +13,12 @@ class Autora(db.Model):
 
 class Conteudo(db.Model):
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(UUID(as_uuid=True), primary_key=True)
     titulo = db.Column(db.String(250))
     url = db.Column(db.String(250))
     resumo = db.Column(db.String(250), nullable=False)
     data_adicao = db.Column(db.Date)
-    autora_id = db.Column(db.Integer, db.ForeignKey('autora.id'))
+    autora_id = db.Column(UUID(as_uuid=True), db.ForeignKey('autora.id'))
     autora = db.relationship('Autora')
     tema = db.Column(db.String(250))
     tipo_conteudo = db.Column(db.String(250))
@@ -29,7 +29,7 @@ class Conteudo(db.Model):
 
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(UUID(as_uuid=True), primary_key=True)
     login = db.Column(db.String(80), unique=True)
     password = db.Column(db.String(150))
 
