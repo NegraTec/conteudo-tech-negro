@@ -1,4 +1,3 @@
-import uuid
 from app.store.models import User, db
 
 
@@ -15,7 +14,7 @@ class UserStore:
     def criar(login, senha):
         usuaria = User()
 
-        usuaria.id = uuid.uuid4()
+        usuaria.id = 9999
         usuaria.login = login
         usuaria.password = senha
 
