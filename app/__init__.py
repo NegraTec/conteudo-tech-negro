@@ -20,7 +20,7 @@ from app import routes
 from app.store import models
 from app import admin_configuracao
 
-if os.getenv('TESTES'):
+if not os.getenv('TESTES'):
     # flask migrate command to be used on GAE
     with app.app_context():
         upgrade()
