@@ -18,7 +18,7 @@ Uma boa fonte de consulta de como o projeto é desenvolvido: https://blog.miguel
 
 ## Migração do banco de dados
 
-Após mudanças nas tabelas, executar os comandos `docker-compose exec web flask db migrate` e depois `docker-compose exec web flask db upgrade` (com o servidor executando).
+Após mudanças nas tabelas, executar os comandos `docker-compose exec web flask db migrate` e depois reinicie o servidor. **O comando de upgrade do banco é executado ao iniciar o servidor Flask (olhe em app/__init__.py).**
 
 Para mais informações, acesse a documentação do [Flask Migrate](https://flask-migrate.readthedocs.io/en/latest/)
 
@@ -42,6 +42,8 @@ https://conteudo-tech-negro.herokuapp.com
 `URL_BANCO_DADOS`
 
 Novas variáveis de ambiente devem ser adicionadas no arquivo `.env-sample`
+
+Também temos o ambiente implantado no GCP.
 
 Com **GCP**, o arquivo `env.yaml` é encriptado usando [Google KMS](https://cloud.google.com/kms/).
 
