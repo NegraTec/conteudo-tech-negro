@@ -1,4 +1,4 @@
 runtime: python37
-entrypoint: gunicorn app:app && flask db migrate && flask db upgrade
+entrypoint: gunicorn app:app
 includes:
   - env.yaml
