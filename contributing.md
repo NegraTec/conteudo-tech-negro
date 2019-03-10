@@ -30,6 +30,8 @@ Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 
 ## Testes
 
+**É necessário configurar a variável de ambiente `TESTES` para True para que os testes unitários tentem configurar o banco.** 
+
 `docker run --rm -it -v "$PWD":/usr/src/app -w /usr/src/app conteudo-tech-negro_web pytest -W ignore::DeprecationWarning`
 
 ## Deploy

@@ -20,8 +20,9 @@ from app import routes
 from app.store import models
 from app import admin_configuracao
 
-# flask migrate command to be used on GAE
-with app.app_context():
-    upgrade()
+if os.getenv('TESTES'):
+    # flask migrate command to be used on GAE
+    with app.app_context():
+        upgrade()
 
-admin_configuracao.criar_usuaria_admin()
+    admin_configuracao.criar_usuaria_admin()
