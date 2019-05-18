@@ -1,6 +1,16 @@
 
 case "$1"
  in
+ constroe-projeto)
+	sudo docker-compose build
+ ;;
+ roda-projeto)
+	sudo docker-compose up --build
+ ;;
+ testes)
+	echo "Construa a imagem antes de executar este comando."
+	sudo docker run --rm -it -v "$PWD":/usr/src/app -w /usr/src/app -e TESTES=True conteudo-tech-negro_web pytest -W ignore::DeprecationWarning
+ ;;
  configura-projeto-google)
 	echo "Logue com suas credenciais do Google Cloud"
 	sudo docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud auth login
@@ -34,6 +44,6 @@ case "$1"
   	sudo docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud config set project conteudo-negro-tech
  ;;
  *)
-    echo $"Usage: $0 {desencripta-env-yaml|encripta-env-yaml|configura-projeto-google}"
+    echo $"Usage: $0 {desencripta-env-yaml|encripta-env-yaml|configura-projeto-google|testes|roda-projeto|constroe-projeto}"
     exit 1
 esac

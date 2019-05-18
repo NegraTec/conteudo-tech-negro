@@ -3,14 +3,15 @@
 # O que instalar antes
 
 - Docker
+- [Docker Compose](https://docs.docker.com/compose/install/), se você nâo instalar pelo Docker for Windows/Mac ou Docker Toolbox
 
 ## Executando o projeto
 
 1. Clone o projeto para sua máquina
 
-2. Adicione um arquivo chamado .env com as variaveis sugeridas no `.env-sample`.
+2. Adicione um arquivo chamado `.env` com as variaveis sugeridas no `.env-sample`.
 
-3. Para iniciar o servidor execute `docker-compose up --build`
+3. Para iniciar o servidor execute `sh cli/conteudo.sh roda-projeto`
 
 4. Acesse `http://localhost:5000`
 
@@ -30,9 +31,7 @@ Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 
 ## Testes
 
-**É necessário configurar a variável de ambiente `TESTES` para True para que os testes unitários tentem configurar o banco.** 
-
-`docker run --rm -it -v "$PWD":/usr/src/app -w /usr/src/app -e TESTES=True conteudo-tech-negro_web pytest -W ignore::DeprecationWarning`
+`sh cli/conteudo.sh testes`
 
 ## Deploy
 
@@ -44,13 +43,13 @@ Novas variáveis de ambiente devem ser adicionadas no arquivo `.env-sample`
 
 Temos o ambiente implantado no GCP: http://conteudo-negro-tech.appspot.com/
 
-*Configurar o Google Cloud localmente*
+**Configurar o Google Cloud localmente**
 
 Peça para ser adicionada no projeto GCP e coloque suas credenciais e configure o projeto google na sua máquina com `sh cli/conteudo.sh configura-projeto-google`
 
 Peça o GCP-project a outra colaboradora do repositório.
 
-*Encriptação de arquivos de ambiente*
+*Encriptação de arquivos de ambiente**
 
 Com **GCP**, o arquivo `env.yaml` é encriptado usando [Google KMS](https://cloud.google.com/kms/).
 
