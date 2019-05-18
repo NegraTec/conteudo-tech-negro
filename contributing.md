@@ -5,6 +5,14 @@
 - Docker
 - [Docker Compose](https://docs.docker.com/compose/install/), se você nâo instalar pelo Docker for Windows/Mac ou Docker Toolbox
 
+## Arquitetura
+
+[diagrama-de-classe](/arquitetura/diagrama-classe.png)
+
+Usamos o GraphViz para gerar os diagramas. Os diagramas ficam na pasta `arquitetura`.
+
+Comando para criar novo diagrama a partir de um arquivo .dot: `docker run -it --rm -v $(pwd):/data risaacson/graphviz:latest dot -v -Tpng /data/arquitetura/<nome-arquivo>.dot -o /data/arquitetura/<nome-arquivo>.png`
+
 ## Executando o projeto
 
 1. Clone o projeto para sua máquina
