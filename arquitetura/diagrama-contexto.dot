@@ -5,8 +5,8 @@ digraph diagramaContexto {
   		label = "Diagrama de Contexto";
 
   		conteudoNegroTech[label="Conteudo Negro Tech"]
-  		pessoa[label="Pessoa",shape="doublecircle"]
-  		outroSistema[label="Outro Sistema", shape="doublecircle"]
+  		pessoa[label="Pessoa",shape="doublecircle",fontsize="10.0"]
+  		outroSistema[label="Outro Sistema", shape="doublecircle",width=1.0,fixedsize=true,fontsize="10.0"]
 
   		pessoa -> conteudoNegroTech;
   		outroSistema -> conteudoNegroTech;

@@ -3,8 +3,8 @@ digraph diagramaContainer {
 	
 	subgraph cluster_principal {
 		node[shape=record,style=filled,fillcolor=chocolate4,fontcolor=white]
-		pessoa[label="Pessoa",shape="doublecircle"]
-  		outroSistema[label="Outro Sistema\nAPI's, Mobile, etc", shape="doublecircle",width=1.3,fixedsize=true,fontsize="10.0"]
+		pessoa[label="Pessoa",shape="doublecircle", fontsize="10.0"]
+  		outroSistema[label="Outro Sistema\nAPI's, Mobile, etc", shape="doublecircle",width=1.2,fixedsize=true,fontsize="10.0"]
 
   		subgraph cluster_container {
   			style=dashed;
