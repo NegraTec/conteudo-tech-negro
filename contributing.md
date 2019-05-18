@@ -42,7 +42,7 @@ Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 
 Novas variáveis de ambiente devem ser adicionadas no arquivo `.env-sample`
 
-Também temos o ambiente implantado no GCP.
+Temos o ambiente implantado no GCP: http://conteudo-negro-tech.appspot.com/
 
 Com **GCP**, o arquivo `env.yaml` é encriptado usando [Google KMS](https://cloud.google.com/kms/).
 
