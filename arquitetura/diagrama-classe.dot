@@ -5,7 +5,7 @@ digraph conteudoTechNegro {
     node[shape=record,style=filled,fillcolor=chocolate4,fontcolor=white]
 
     2[label = "{Conteudo|+ url\n+ titulo\n+ resumo\n+ data_adicao\n+ autora\n+ tema\n+ tipo_conteudo\n+ imagem}"]
-    3[label = "{Autora|\n+ nome\n+ redes_sociais}"]
+    3[label = "{Autora|+ nome\n+ redes_sociais}"]
 
     { rank=same 2 3 }
     2 -> 3;

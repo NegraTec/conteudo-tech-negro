@@ -1,0 +1,15 @@
+digraph diagramaContexto {
+
+	subgraph cluster_principal {
+		node[shape=record,style=filled,fillcolor=chocolate4,fontcolor=white]
+  		label = "Diagrama de Contexto";
+
+  		conteudoNegroTech[label="Conteudo Negro Tech"]
+  		pessoa[label="Pessoa",shape="doublecircle"]
+  		outroSistema[label="Outro Sistema", shape="doublecircle"]
+
+  		pessoa -> conteudoNegroTech;
+  		outroSistema -> conteudoNegroTech;
+	}
+
+}
