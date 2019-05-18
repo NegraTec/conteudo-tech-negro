@@ -7,7 +7,7 @@
 
 ## Arquitetura
 
-[diagrama-de-classe](/arquitetura/diagrama-classe.png)
+![diagrama-de-classe](/arquitetura/diagrama-classe.png)
 
 Usamos o GraphViz para gerar os diagramas. Os diagramas ficam na pasta `arquitetura`.
 
@@ -57,7 +57,7 @@ Peça para ser adicionada no projeto GCP e coloque suas credenciais e configure 
 
 Peça o GCP-project a outra colaboradora do repositório.
 
-*Encriptação de arquivos de ambiente**
+**Encriptação de arquivos de ambiente**
 
 Com **GCP**, o arquivo `env.yaml` é encriptado usando [Google KMS](https://cloud.google.com/kms/).
 
