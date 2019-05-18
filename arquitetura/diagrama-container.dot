@@ -1,0 +1,22 @@
+digraph diagramaContainer {
+	label="Diagrama de Container";
+	
+	subgraph cluster_principal {
+		node[shape=record,style=filled,fillcolor=chocolate4,fontcolor=white]
+		pessoa[label="Pessoa",shape="doublecircle"]
+  		outroSistema[label="Outro Sistema\nAPI's, Mobile, etc", shape="doublecircle",width=1.3,fixedsize=true,fontsize="10.0"]
+
+  		subgraph cluster_container {
+  			style=dashed;
+  			label="Conteudo Negro Tech";
+  			fontsize="7.0";
+			conteudoNegroTech[label="{App Web|Python, Flask}"]
+			bancoDados[label="Banco de Dados\nPostgres",shape="cylinder"]
+
+			conteudoNegroTech -> bancoDados[label="SQLAlchemy",fontsize="10.0"];
+		}
+
+		pessoa -> conteudoNegroTech[label="UI",fontsize="10.0"];
+  		outroSistema -> conteudoNegroTech[label="API Rest",fontsize="10.0"];
+	}
+}
