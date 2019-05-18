@@ -44,23 +44,21 @@ Novas variáveis de ambiente devem ser adicionadas no arquivo `.env-sample`
 
 Temos o ambiente implantado no GCP: http://conteudo-negro-tech.appspot.com/
 
-Com **GCP**, o arquivo `env.yaml` é encriptado usando [Google KMS](https://cloud.google.com/kms/).
+*Configurar o Google Cloud localmente*
 
-É possível usar o CLI gcloud com a [imagem Docker google/cloud-sdk](https://hub.docker.com/r/google/cloud-sdk).
-
-Peça para ser adicionada no projeto GCP e coloque suas credenciais no gcloud usando `docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud auth login`. Depois configure o projeto com `docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud config set project <GCP-project>`
+Peça para ser adicionada no projeto GCP e coloque suas credenciais e configure o projeto google na sua máquina com `sh cli/conteudo.sh configura-projeto-google`
 
 Peça o GCP-project a outra colaboradora do repositório.
 
-Para encriptar o arquivo: `docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud kms encrypt --location global \
-  --keyring storage --key mykey \
-  --plaintext-file env.yaml \
-  --ciphertext-file env.yaml.encrypted`
+*Encriptação de arquivos de ambiente*
+
+Com **GCP**, o arquivo `env.yaml` é encriptado usando [Google KMS](https://cloud.google.com/kms/).
+
+Para encriptar o arquivo: `sh cli/conteudo.sh encripta-env-yaml`
   
-Para desencriptar o arquivo: `docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud kms decrypt --location global \
-  --keyring storage --key mykey \
-  --plaintext-file env.yaml \
-  --ciphertext-file env.yaml.encrypted`
+Para desencriptar o arquivo: `sh cli/conteudo.sh desencripta-env-yaml`
+
+É possível usar o CLI gcloud com a [imagem Docker google/cloud-sdk](https://hub.docker.com/r/google/cloud-sdk).
 
 ## Débito Técnico
 
