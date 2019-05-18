@@ -26,7 +26,7 @@ Alembic https://alembic.zzzcomputing.com/en/latest/tutorial.html#create-a-migrat
 
 Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 
-**O banco possui backup agendados para as 23 hs todos os dias.**
+**O banco possui backup agendados para as 8PM-12AM todos os dias.**
 
 ## Testes
 
@@ -35,9 +35,6 @@ Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 `docker run --rm -it -v "$PWD":/usr/src/app -w /usr/src/app -e TESTES=True conteudo-tech-negro_web pytest -W ignore::DeprecationWarning`
 
 ## Deploy
-
-Usamos Heroku.
-https://conteudo-tech-negro.herokuapp.com
 
 **Variáveis de ambiente**
 
@@ -64,4 +61,9 @@ Para desencriptar o arquivo: `docker run -v "$PWD":/root/.config -w /root/.confi
   --keyring storage --key mykey \
   --plaintext-file env.yaml \
   --ciphertext-file env.yaml.encrypted`
+
+## Débito Técnico
+
+Usamos Heroku.
+https://conteudo-tech-negro.herokuapp.com
 
