@@ -11,6 +11,8 @@
 
 ![diagrama-de-container](/arquitetura/diagrama-container.png)
 
+![diagrama-de-componente](/arquitetura/diagrama-componente.png)
+
 ![diagrama-de-classe](/arquitetura/diagrama-classe.png)
 
 Usamos o GraphViz para gerar os diagramas. Os diagramas ficam na pasta `arquitetura`.

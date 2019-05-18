@@ -1,0 +1,28 @@
+digraph diagramaContainer {
+	label="Diagrama de Componente";
+	
+	subgraph cluster_principal {
+		node[shape=record,style=filled,fillcolor=chocolate4,fontcolor=white]
+		pessoa[label="Pessoa",shape="doublecircle", fontsize="10.0"]
+  		outroSistema[label="Outro Sistema\nAPI's, Mobile, etc", shape="doublecircle",width=1.2,fixedsize=true,fontsize="10.0"]
+		bancoDados[label="Banco de Dados\nPostgres",shape="cylinder"]
+
+  		subgraph cluster_container {
+  			style=dashed;
+  			label="Web Server";
+  			fontsize="10.0";
+  			app_init[label="app/init.py\nConfigura autenticação, banco, migrações", fontsize="10.0"]
+  			routes[label="Routes", fontsize="10.0"]
+			service[label="{Service\nSe comunica com o store e monta a view}",fontsize="10.0"]
+			store[label="Store",fontsize="10.0"]			
+
+			app_init -> routes;
+			routes -> service[label="JSON",fontsize="10.0"];
+			service -> store[label="Query/objeto do SQLAlchemy",fontsize="10.0"];
+		}
+
+		pessoa -> routes[label="HTML",fontsize="10.0"];
+  		outroSistema -> routes[label="JSON",fontsize="10.0"];
+  		store -> bancoDados[label="SQLAlchemy",fontsize="10.0"];
+	}
+}
