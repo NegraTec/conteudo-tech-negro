@@ -33,6 +33,8 @@ Uma boa fonte de consulta de como o projeto é desenvolvido: https://blog.miguel
 
 ## Migração do banco de dados
 
+O banco está hospedado no Google Cloud SQL, Postgres.
+
 Após mudanças nas tabelas, executar os comandos `docker-compose exec web flask db migrate` e depois reinicie o servidor. **O comando de upgrade do banco é executado ao iniciar o servidor Flask (olhe em app/__init__.py).**
 
 Para mais informações, acesse a documentação do [Flask Migrate](https://flask-migrate.readthedocs.io/en/latest/)
