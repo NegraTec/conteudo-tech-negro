@@ -43,7 +43,10 @@ case "$1"
 	echo "Configura o projeto Google conteudo-negro-tech"
   	sudo docker run -v "$PWD":/root/.config -w /root/.config -ti google/cloud-sdk:latest gcloud config set project conteudo-negro-tech
  ;;
+ build-travis-cli) 
+	sudo docker build -t travis-cli --file Dockerfile-travis-cli .
+ ;;
  *)
-    echo $"Usage: $0 {desencripta-env-yaml|encripta-env-yaml|configura-projeto-google|testes|roda-projeto|constroe-projeto}"
+    echo $"Usage: $0 {desencripta-env-yaml|encripta-env-yaml|configura-projeto-google|testes|roda-projeto|constroe-projeto|build-travis-cli|encripta-gae-credenciais}"
     exit 1
 esac

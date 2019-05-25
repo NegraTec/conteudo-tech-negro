@@ -49,6 +49,21 @@ Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 
 `sh cli/conteudo.sh testes`
 
+## CI/CD
+
+O projeto usa o [Travis CI](https://travis-ci.org/).
+
+Para o deploy temos o arquivo com as credenciais do GCP encriptado. Para encriptar usamos o travis cli através de um container docker.
+
+[Criando as credenciais](https://docs.travis-ci.com/user/deployment/google-app-engine/)
+
+Comando para encriptar o arquivo de credenciais:
+
+1. Construa a imagem para o travis cli com `sh ci/compras.sh build-travis-cli` 
+
+2. Entre no container travis-cli com o comando `sudo docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp travis-cli /bin/bash`
+3. Então execute `travis encrypt-file conteudo-negro-tech-c463a08bcb68.json --add`
+
 ## Deploy
 
 **Variáveis de ambiente**
