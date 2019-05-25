@@ -4,10 +4,9 @@ python:
 script: pytest
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_e5ce453b448a_key -iv $encrypted_e5ce453b448a_iv
-  -in conteudo-negro-tech-c463a08bcb68.json.enc -out conteudo-negro-tech-c463a08bcb68.json
+  -in files-for-deployon-gae.tar.enc -out files-for-deployon-gae.tar
   -d
-- openssl aes-256-cbc -K $encrypted_e5ce453b448a_key -iv $encrypted_e5ce453b448a_iv
-  -in env.yaml.enc -out env.yaml -d
+- tar xvf files-for-deployon-gae.tar
 deploy:
   provider: gae
   keyfile: conteudo-negro-tech-c463a08bcb68.json
