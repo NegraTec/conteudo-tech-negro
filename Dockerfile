@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD gunicorn --log-level DEBUG --bind=0.0.0.0:8080 app:app
+CMD gunicorn --log-level DEBUG -t 60 --bind=0.0.0.0:8080 app:app
