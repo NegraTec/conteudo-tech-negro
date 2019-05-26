@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD gunicorn --debug app:app
+CMD gunicorn --log-level DEBUG --debug app:app
