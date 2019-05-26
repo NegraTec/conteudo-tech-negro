@@ -1,4 +1,5 @@
 runtime: python37
+env: flex
 entrypoint: gunicorn app:app
 includes:
   - env.yaml
