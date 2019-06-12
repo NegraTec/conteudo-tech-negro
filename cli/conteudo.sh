@@ -46,6 +46,9 @@ case "$1"
  build-travis-cli) 
 	sudo docker build -t travis-cli --file Dockerfile-travis-cli .
  ;;
+ testes-func)
+	sudo docker run --rm -it -v "$PWD":/usr/src/app -w /usr/src/app -e TESTES=True conteudo-tech-negro_web behave
+ ;;
  *)
     echo $"Usage: $0 {desencripta-env-yaml|encripta-env-yaml|configura-projeto-google|testes|roda-projeto|constroe-projeto|build-travis-cli|encripta-gae-credenciais}"
     exit 1
