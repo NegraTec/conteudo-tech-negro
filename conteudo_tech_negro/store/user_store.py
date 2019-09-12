@@ -1,4 +1,4 @@
-from app.store.models import User, db
+from conteudo_tech_negro.store.models import User, db
 
 
 class UserStore:

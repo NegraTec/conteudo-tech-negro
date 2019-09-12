@@ -1,4 +1,4 @@
-from app.store.models import Autora
+from conteudo_tech_negro.store.models import Autora
 
 
 class AutoraStore:

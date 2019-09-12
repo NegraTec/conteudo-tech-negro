@@ -9,7 +9,7 @@ services:
   web:
     container_name: conteudo-tech-negro
     build: .
-    command: flask run --host=0.0.0.0
+    command: gunicorn --log-level DEBUG -t 60 --bind=0.0.0.0:5000 conteudo_tech_negro:app
     volumes:
       - .:/usr/src/app
     ports:

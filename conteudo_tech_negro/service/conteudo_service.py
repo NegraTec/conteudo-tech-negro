@@ -1,5 +1,5 @@
 import random
-from app.store.conteudo_store import ConteudoStore
+from conteudo_tech_negro.store.conteudo_store import ConteudoStore
 
 
 class ConteudoService:

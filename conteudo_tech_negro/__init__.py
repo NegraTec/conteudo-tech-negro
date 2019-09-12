@@ -16,9 +16,9 @@ migrate = Migrate(app, db)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-from app import routes
-from app.store import models
-from app import admin_configuracao
+from conteudo_tech_negro import routes
+from conteudo_tech_negro.store import models
+from conteudo_tech_negro import admin_configuracao
 
 if not os.getenv('TESTES'):
     # flask migrate command to be used on GAE

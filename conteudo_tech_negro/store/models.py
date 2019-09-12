@@ -1,4 +1,4 @@
-from app import db
+from conteudo_tech_negro import db
 
 
 class Autora(db.Model):

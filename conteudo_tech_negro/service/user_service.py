@@ -1,6 +1,6 @@
 import os
 from werkzeug.security import generate_password_hash
-from app.store.user_store import UserStore
+from conteudo_tech_negro.store.user_store import UserStore
 
 
 class UserService:

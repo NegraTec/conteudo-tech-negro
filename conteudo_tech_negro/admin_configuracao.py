@@ -6,9 +6,9 @@ from wtforms import form, fields, validators
 from werkzeug.security import check_password_hash
 from flask import redirect, url_for, request
 
-from app import login_manager, db, app
-from app.service.user_service import UserService
-from app.store.models import Autora, Conteudo
+from conteudo_tech_negro import login_manager, db, app
+from conteudo_tech_negro.service.user_service import UserService
+from conteudo_tech_negro.store.models import Autora, Conteudo
 
 
 def criar_usuaria_admin():

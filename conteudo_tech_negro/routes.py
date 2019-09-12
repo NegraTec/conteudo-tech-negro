@@ -1,7 +1,7 @@
-from app import app
+from conteudo_tech_negro import app
 from flask import render_template
 
-from app.service.conteudo_service import ConteudoService
+from conteudo_tech_negro.service.conteudo_service import ConteudoService
 
 
 @app.route("/")
