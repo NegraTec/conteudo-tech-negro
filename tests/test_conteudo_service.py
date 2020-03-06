@@ -1,12 +1,12 @@
 from unittest import TestCase, mock
-from app.store.models import Conteudo, Autora
-from app.service.conteudo_service import ConteudoService
+from conteudo_tech_negro.store.models import Conteudo, Autora
+from conteudo_tech_negro.service.conteudo_service import ConteudoService
 
 
 class TestConteudoService(TestCase):
 
-    @mock.patch('app.store.conteudo_store.ConteudoStore.listar_conteudos')
-    @mock.patch('app.store.conteudo_store.ConteudoStore.obter_autora')
+    @mock.patch('conteudo_tech_negro.store.conteudo_store.ConteudoStore.listar_conteudos')
+    @mock.patch('conteudo_tech_negro.store.conteudo_store.ConteudoStore.obter_autora')
     def test_obter_conteudo_com_autora(self, obter_autora_mock, conteudo_store_mock):
         conteudo_store_mock.return_value = [
             Conteudo(

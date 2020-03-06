@@ -1,11 +1,11 @@
 from unittest import TestCase, mock
-from app.service.autora_service import AutoraService
-from app.store.models import Autora
+from conteudo_tech_negro.service.autora_service import AutoraService
+from conteudo_tech_negro.store.models import Autora
 
 
 class TestAutoraService(TestCase):
 
-	@mock.patch('app.store.autora_store.AutoraStore.cadastrar_autora')
+	@mock.patch('conteudo_tech_negro.store.autora_store.AutoraStore.cadastrar_autora')
 	def test_cadastrar_autora(self, autora_store_cadastrar_autora):
 		autora_store_cadastrar_autora.return_value = Autora(
 			nome='Icaro',

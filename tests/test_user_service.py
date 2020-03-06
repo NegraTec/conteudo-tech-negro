@@ -1,11 +1,11 @@
 from unittest import TestCase, mock
-from app.service.user_service import UserService
-from app.store.models import User
+from conteudo_tech_negro.service.user_service import UserService
+from conteudo_tech_negro.store.models import User
 
 
 class TestUserService(TestCase):
 
-    @mock.patch('app.store.user_store.UserStore.obter_usuaria_por_id')
+    @mock.patch('conteudo_tech_negro.store.user_store.UserStore.obter_usuaria_por_id')
     def test_obter_usuaria_por_id(self, obter_usuaria_por_id_mock):
         obter_usuaria_por_id_mock.return_value = User(login='algum login')
 
@@ -13,7 +13,7 @@ class TestUserService(TestCase):
 
         self.assertEqual('algum login', usuaria.login)
 
-    @mock.patch('app.store.user_store.UserStore.obter_usuaria_por_login')
+    @mock.patch('conteudo_tech_negro.store.user_store.UserStore.obter_usuaria_por_login')
     def test_obter_usuaria_por_login(self, obter_usuaria_por_login_mock):
         obter_usuaria_por_login_mock.return_value = User(login='algum login')
 
