@@ -9,7 +9,7 @@ case "$1"
  ;;
  testes)
 	echo "Construa a imagem antes de executar este comando."
-	sudo docker run --rm -it -v "$PWD":/usr/src/app -w /usr/src/app -e TESTES=True conteudo-tech-negro_web pytest -W ignore::DeprecationWarning
+	sudo docker run --rm -it -v "$PWD":/usr/src/app -w /usr/src/app -e TESTES=True conteudo-tech-negro_web pytest
  ;;
  configura-projeto-google)
 	echo "Logue com suas credenciais do Google Cloud"
