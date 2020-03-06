@@ -50,6 +50,16 @@ Documentação do [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 
 O projeto usa o [Travis CI](https://travis-ci.org/).
 
+Para o deploy temos que encriptar o token do Heroku para colocar no `.travis.yml`. Para encriptar usamos o travis cli através de um container docker.
+
+Comando para encriptar o token:
+
+1. Construa a imagem para o travis cli com `sh cli/conteudo.sh build-travis-cli` 
+
+2. Entre no container travis-cli com o comando `sudo docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp travis-cli /bin/bash`
+3. Então execute `travis encrypt $(heroku auth:token) --add deploy.api_key`
+
+
 ## Deploy
 
 **Variáveis de ambiente**
