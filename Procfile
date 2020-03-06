@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn conteudo_tech_negro:app
