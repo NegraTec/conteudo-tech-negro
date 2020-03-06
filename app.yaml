@@ -1,5 +1,0 @@
-runtime: custom
-env: flex
-entrypoint: gunicorn app:app
-includes:
-  - env.yaml
