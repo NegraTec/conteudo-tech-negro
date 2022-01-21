@@ -5,6 +5,6 @@ Flask-SQLAlchemy==2.3.2
 Flask-Migrate==2.3.0
 flask-admin==1.5.5
 flask-login==0.4.1
-ipython==7.1.1
+ipython==7.16.3
 pytest==4.0.0
 behave==1.2.6
